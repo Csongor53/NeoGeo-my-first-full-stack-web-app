@@ -1,0 +1,42 @@
+<main>
+    <%- include(`./partials/game-display.ejs`) %>
+
+    <section class="game-details-container">
+        <p><%= game.description %></p>
+
+        <div class="game-extra-container">
+            <div class="game-info-wrapper-left game-info-container">
+                <div class="game-info-wrapper">
+                    <div class="game-title-wrapper"><h3><%= game.title %></h3></div>
+                    <div class="game-owner-wrapper">
+                        <img src="/public/icons/account_circle_black.svg" alt="">
+                        <h3><%= game.owner %></h3>
+                    </div>
+                </div>
+                <div class="game-info-wrapper game-info-wrapper-small">
+                    <div class="game-text-row">
+                        <p>Developer</p><p class="right-text"><%= game.owner %></p>
+                    </div>
+                    <div class="game-text-row">
+                        <p>Available</p><p class="right-text"><%= game.version %></p>
+                    </div>
+                    <div class="game-text-row">
+                        <p>Platform</p><p class="right-text"><%= game.platform %></p>
+                    </div>
+                </div>
+            </div>
+            <div class="game-info-wrapper-right game-info-container">
+                <div class="game-info-wrapper">
+                    <div class="game-download-wrapper"><a href="<%= game.link %>"><h3>Download</h3></a></div>
+                    <div class="game-wishlist-wrapper"><h5>+ Add to wishlist</h5></div>
+                </div>
+                <div class="game-info-wrapper">
+                    <div class="game-social-icon-container">
+                        <a href="<%= game.social %>"><img src="/public/icons/public.svg" alt="internet icon"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>

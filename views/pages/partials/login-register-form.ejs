@@ -1,0 +1,59 @@
+<section class="forms-section">
+    <div class="forms">
+
+        <div class="form-wrapper is-active">
+
+            <button type="button" class="switcher switcher-login">
+                Login
+                <span class="underline"></span>
+            </button>
+
+
+            <form class="form form-login" action="/login" method="post">
+                <fieldset>
+                    <div class="input-wrapper">
+                        <label for="email">E-mail</label>
+                        <input id="login-email" name="email" type="email" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="password">Password</label>
+                        <input id="login-password" name="password" type="password" required>
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn-login" value="Login">Login</button>
+            </form>
+        </div>
+
+
+        <div class="form-wrapper">
+            <button type="button" class="switcher switcher-signup">
+                Register
+                <span class="underline"></span>
+            </button>
+
+            <form class="form form-signup" action="/register" method="post">
+                <fieldset>
+                    <div class="input-wrapper">
+                        <label for="nickname">Nickname</label>
+                        <input id="signup-nickname" name="nickname" type="text" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="account_name">Account Name</label>
+                        <input id="signup-account-name" name="account_name" type="text" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="email">E-mail</label>
+                        <input id="signup-email" name="email" type="email" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="password">Password</label>
+                        <input id="signup-password" name="password" type="password" required>
+                    </div>
+
+                </fieldset>
+                <button type="submit" class="btn-signup" value="Register">Register</button>
+            </form>
+        </div>
+
+    </div>
+</section>

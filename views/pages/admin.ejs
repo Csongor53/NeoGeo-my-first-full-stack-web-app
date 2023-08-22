@@ -1,0 +1,43 @@
+
+<main>
+    <section class='admin-table-container'>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#id</th>
+                <th scope="col">Account Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Nickname</th>
+                <th scope='col'>Delete</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <% if(data.length){
+
+            for(var i = 0; i< data.length; i++) {%>
+                <tr>
+                    <th scope="row"><%= data[i].id %></th>
+                    <td><%= data[i].account_name%></td>
+                    <td><%= data[i].email%></td>
+                    <td><%= data[i].nickname%></td>
+                    <td><%= data[i].role%></td>
+                    <td>
+                        <form action="/admin/delete" method="post" >
+                            <input style="visibility: hidden" value="<%= data[i].id %>" name="id" type="text">
+                            <button class="" type="submit" value="delete">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }
+
+            }else{ %>
+                <tr>
+                    <td colspan="5">No user</td>
+                </tr>
+            <% } %>
+
+            </tbody>
+        </table>
+    </section>
+</main>

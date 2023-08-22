@@ -1,0 +1,24 @@
+<main>
+
+<div
+    <% if(data.length){
+    for(var i = 0; i< data.length; i++) {%>
+        <div style="padding:10px;">
+            <div>
+                <div class="" style="width: 18rem;">
+                    <img src="..." class="" width="150px" height="150px" id="picture"></img>
+                    <div class="">
+                        <h3><%= data[i].title %></h3>
+                        <h5><%= data[i].subtitle %></h5>
+                        <p><%= data[i].post %></p>
+                        <p>By <%= data[i].author %></p>
+                        <a>Click to read</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% }
+    } else { %>
+    <% } %>
+
+</main>

@@ -1,0 +1,37 @@
+<main>
+    <section class="edit-forms">
+        <div class="edit-form-wrapper">
+            <div class="edit-title">
+                <h3>Update User Info</h3>
+                <span class="edit-underline"></span>
+            </div>
+
+            <form class="edit-form" action="/users/<%= user.id %>/user-profile" method="post">
+                <fieldset>
+                    <div class="edit-input-wrapper">
+                        <label for="nickname">Nickname</label>
+                        <input value="<%= user.nickname %>" name="nickname" type="text" required>
+                    </div>
+                    <div class="edit-input-wrapper">
+                        <label for="account_name">Account Name</label>
+                        <input value="<%= user.account_name %>" name="account_name" type="text" required>
+                    </div>
+                    <div class="edit-input-wrapper">
+                        <label for="email">E-mail</label>
+                        <input value="<%= user.email %>" name="email" type="email" required>
+                    </div>
+                    <div class="edit-input-wrapper">
+                        <label for="password">Password</label>
+                        <input name="password" type="password" required>
+                    </div>
+                    <div style="visibility: hidden">
+                        <label for="id"></label>
+                        <input value="<%= user.id %>" name="id" type="text" required>
+                    </div>
+
+                </fieldset>
+                <button type="submit" class="edit-btn" value="Update">Update</button>
+            </form>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,25 @@
+<html lang="en">
+
+<head>
+    <title><%= siteName %> | Welcome</title>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--    ALL THE VIEWS ARE INSERTED INTO THE MAIN INDEX TEMPLATE FOR AVOIDING CODE REDUNDANCY    -->
+    <%- include(`./partials/styles.ejs`) %>
+</head>
+
+<body>
+<header>
+    <img class="index-banner" src="/public/images/heading.png">
+    <%- include(`./partials/nav.ejs`) %>
+</header>
+
+<%- include(`../pages/${template}`) %>
+<script src="/public/javascript/slider.js"></script>
+<script src="/public/javascript/login-register.js"></script>
+</body>
+</html>

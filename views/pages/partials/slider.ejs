@@ -1,0 +1,31 @@
+<section class="slider-parent-container">
+
+    <button id="arrow-left" class="arrow" onclick="clickArrow('left')">
+        <img src="/public/icons/arrow_left.svg" alt="arrow left">
+    </button>
+
+    <div class="slider-container">
+        <div id="slider-content-wrapper" class="slider-content-wrapper">
+
+            <%sliderItems.map((item) => {%>
+                <div class="slider-slide">
+                    <img src="<%= item.img%>" alt="game cover image">
+                    <div class="info-wrapper">
+                        <h2><%= item.title %></h2>
+                        <p><%= item.text%></p>
+                        <form action="/games/toGame" method="post" >
+                            <input style="visibility: hidden" value="<%= item.link %>" name="id" type="text">
+                            <button class="to-game-btn" type="submit" value="toGame">Get</button>
+                        </form>
+
+                    </div>
+                </div>
+            <%})%>
+        </div>
+    </div>
+
+    <button id="arrow-right" class="arrow" onclick="clickArrow('right')">
+        <img src="/public/icons/arrow_right.svg" alt="arrow right">
+    </button>
+
+</section>

@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+
+    background-image: linear-gradient(deeppink, darkslateblue);
+
+    font-family: openSans;
+    color: white;
+}
+li {
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+h2, h3 {
+    font-family: kdam-thmor-pro;
+    letter-spacing: 0.1rem;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+.index-banner {
+
+    width: 100%;
+    aspect-ratio: 10/3;
+    max-height: 80vh;
+    object-fit: cover;
+}

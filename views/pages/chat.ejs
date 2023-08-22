@@ -1,0 +1,64 @@
+<main>
+
+
+        <section>
+            <h1>Chat View</h1>
+
+            <input id="room" type="text">
+            <button onclick="join()">Join Room</button>
+
+            <div id="messages"></div>
+            <input id="text" type="text">
+            <button onclick="sendMyMessage()">Send</button>
+
+        </section>
+
+
+        <script>
+
+            const ws = new WebSocket('ws://localhost:3000');
+
+            ws.onopen = function () {
+                console.log('websocket is connected now ...')
+                ws.send(JSON.stringify({
+                    room: '',
+                    message: 'connected',
+                }))
+            }
+
+            // with parsing now
+            ws.onmessage = function (ev) {
+                console.log(ev)
+                addTextMessage(JSON.parse(ev.data));
+            }
+
+            //send message function
+            function sendMyMessage() {
+                let room = document.getElementById("room").value;
+                let text = document.getElementById("text").value;
+                let message = {
+                    room: room,
+                    message: text,
+                }
+                ws.send(JSON.stringify(message))
+                //document.getElementById('text').value = "";
+                //document.getElementById('text').focus();
+            }
+
+            function addTextMessage(message){
+                let tag = document.createElement("p");
+                let text = document.createTextNode (message.message);
+                tag.appendChild(text);
+                let element = document.getElementById("messages");
+                element.appendChild(tag)
+                //document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+            }
+
+            function join() {
+                let room = document.getElementById("room").value;
+                document.getElementById('messages').innerHTML = "";
+                ws.send(JSON.stringify({joinRoom: room}));
+            }
+
+        </script>
+</main>

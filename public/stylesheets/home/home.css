@@ -1,0 +1,66 @@
+main {
+    display: flex;
+    flex-flow: column wrap;
+    width: 70vw;
+    margin: 0 15vw;
+}
+main section {
+    margin: 24px 0;
+    width: 100%;
+}
+
+/* NEWS FEATURE */
+.news-feature-wrapper {
+    padding: 16px;
+    background-color: #98cced;
+    color: #404b53;
+}
+.news-feature-wrapper * {
+    margin: 8px 0;
+}
+
+/* SALE FEATURE */
+.sale-feature-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+}
+
+.sale-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+
+    width: 70vw;
+}
+
+.sale-item {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1;
+    justify-content: flex-start;
+
+    font-family: kdam-thmor-pro;
+    cursor: pointer;
+}
+.sale-item img {
+    height: 20vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 2vmax;
+    box-shadow: 0 0 0.2vmax 0 #000;
+}
+.sale-item h3 {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .sale-container {
+        flex-direction: column;
+    }
+}
+
+/* RECOMMENDATIONS */

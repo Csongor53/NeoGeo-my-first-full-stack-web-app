@@ -1,0 +1,92 @@
+.edit-forms {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.edit-form-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 28px;
+    align-items: center;
+}
+
+.edit-title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    width: min-content;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.edit-underline {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    width: 100%;
+    height: 3px;
+}
+
+.edit-underline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: inherit;
+    display: block;
+    width: inherit;
+    height: inherit;
+    background-color: currentColor;
+}
+
+.edit-form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 32px;
+    background-color: white;
+    min-width: 260px;
+    padding: 30px 25px;
+    border-radius: 0.5vmax;
+}
+
+.edit-form fieldset {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.edit-input-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4px;
+}
+.edit-input-wrapper label {
+    font-size: 14px;
+    color: rgba(64, 75, 83, 0.85);
+}
+.edit-input-wrapper input {
+    padding: 0 4px;
+    line-height: 40px;
+    color: #3b4465;
+    background: #eef9fe;
+    border: 1px solid #cddbef;
+    border-radius: 0.2vmax;
+}
+
+.edit-btn {
+    width: 120px;
+    height: 40px;
+    font-family: kdam-thmor-pro;
+    font-size: 16px;
+    color: #fbfdff;
+    background: #3990cd;
+    border: none;
+    border-radius: 5vmax;
+}

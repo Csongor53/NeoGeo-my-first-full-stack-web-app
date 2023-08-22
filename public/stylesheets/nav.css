@@ -1,0 +1,211 @@
+.nav-main {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+    height: 150px;
+    padding: 30px 15vw;
+    background-color: #16182d;
+    color: white;
+    font-family: kdam-thmor-pro;
+    letter-spacing: 0.1rem;
+}
+
+/* LEFT,RIGHT AND CENTER */
+.nav-content-wrapper {
+    flex: 1;
+}
+
+/* LEFT */
+.nav-left {
+    text-align: left;
+}
+.nav-left ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+/* CENTER */
+.nav-center {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+
+    text-align: center;
+    font-family: Orbitron;
+    font-size: 40px;
+    color: #fff;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+/* RIGHT */
+.nav-right {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+
+    text-align: right;
+}
+.nav-right a {
+    display: flex;
+    padding: 10px;
+    border-radius: 0.5vmax;
+}
+.nav-right img {
+    width: 24px;
+    height: fit-content;
+}
+#nav-login-register {
+    background-color: #3990cd;
+}
+
+.dropdown {
+    overflow: hidden;
+}
+
+/* Dropdown button */
+.dropbtn {
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    margin: 0;
+}
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+    background-color: #3990cd;
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    flex-flow: column nowrap;
+    position: absolute;
+
+    min-width: 160px;
+    z-index: 1;
+
+    background-color: #404b53;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0.5vmax;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    display: flex;
+    gap: 8px;
+    text-decoration: none;
+    text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.75);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+/**/
+/*RESPONSIVE NAVBAR*/
+/**/
+nav input[type='checkbox'] {
+    display: none;
+}
+/*HAMBURGER MENU*/
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+.hamburger_2 {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+    .nav-main {
+        padding: 4px 2vw;
+    }
+    .nav-left ul {
+        display: none;
+        position: absolute;
+        background-color: #121e25;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+    }
+    .nav-left ul li + li {
+        margin-top: 12px;
+    }
+    input[type='checkbox']:checked ~ .nav-left ul {
+        display: block;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+/* SUB NAV */
+
+.sub-nav {
+    display: flex;
+    align-self: center;
+    justify-content: flex-start;
+
+    width: 70%;
+    padding: 16px 2vw;
+
+    color: white;
+    font-family: kdam-thmor-pro;
+    letter-spacing: 0.1rem;
+
+
+}
+.sub-nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: flex-start;
+
+    gap: 8px;
+}
+
+.sub-nav-search {
+    display: flex;
+
+    padding: 12px 12px;
+
+    border-radius: 10px;
+    background-color: #404b53;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.75);
+}
+.sub-nav-search input {
+    border: none;
+    background-color: transparent;
+}
+.sub-nav-search input:focus {
+    outline: none;
+}
+::placeholder {
+    color: white;
+    opacity: 1;
+}

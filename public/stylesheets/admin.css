@@ -1,0 +1,18 @@
+.table {
+    overflow: hidden;
+    min-width: 260px;
+    margin-top: 50px;
+    padding: 30px 25px;
+    border-radius: 0.5vmax;
+    transform-origin: top;
+}
+
+.admin-table-container{
+    display: flex;
+    justify-content: center;
+}
+.admin-table-container table {
+    display: flex;
+    justify-content: center;
+    width: 100%
+}

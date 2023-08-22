@@ -1,0 +1,58 @@
+<main>
+
+    <section class="news-feature-wrapper">
+        <h3>NEWS! Indie Dev Fest Incoming!</h3>
+        <p>Get ready for the summer indie dev festival on August 1st 2022, in held in Vienna this year!</p>
+    </section>
+
+    <%- include(`./partials/slider.ejs`) %>
+
+    <section class="sale-feature-wrapper">
+        <%
+        let saleItems = [
+            {
+                img: '/public/images/on-sale/gato-roboto.jpg',
+                title: 'Gato Roboto',
+                link: 'https://gatoroboto.com/'
+            },
+            {
+                img: '/public/images/on-sale/inmost.jpg',
+                title: 'Inmost',
+                link: 'https://inmostgame.com/'
+            },
+            {
+                img: '/public/images/on-sale/moving-out.jpg',
+                title: 'Moving Out',
+                link: 'https://www.team17.com/games/moving-out/'
+            }
+        ];
+        %>
+
+        <!-- Blogs go here that are created -->
+
+
+
+
+
+
+
+
+        <!-- End blogs section -->
+
+
+        <h2>On Sale</h2>
+        <div class="sale-container">
+
+            <%saleItems.map((item) => {%>
+            <a class="sale-item" href="<%= item.link %>">
+                <img src="<%= item.img%>" alt="">
+                <h3><%= item.title%></h3>
+            </a>
+            <%})%>
+
+        </div>
+    </section>
+
+    <section class="recommended-feature-container"></section>
+
+</main>

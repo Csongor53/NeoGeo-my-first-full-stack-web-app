@@ -1,0 +1,163 @@
+
+.profile-page-main {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2vw;
+}
+.profile-parent-container {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+}
+
+/* PROFILE */
+.profile-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    gap: 4px;
+}
+.profile-user {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 8px;
+    align-self: flex-start;
+
+    padding: 12px 24px;
+    background-color: #404b53;
+    border-radius: 0.5vmax;
+}
+.profile-user p {
+    font-size: 12px;
+}
+
+.profile-banner-container {
+    /*transform: translateX(-15vw);*/
+    width: 100%;
+    border: none;
+
+}
+.profile-banner-container img {
+
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    background-color: #3b4465;
+    border-radius: 2vmax;
+    box-shadow: 0 0 0.2vmax 0 #000;
+}
+
+/*DELETE BUTTON*/
+
+.delete-button {
+
+    margin: 10px;
+    padding: 10px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    border: 0px;
+    font-weight: 700;
+    box-shadow: 0px 0px 14px -7px #f09819;
+    background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+}
+
+.delete-button:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.delete-button:active {
+    transform: scale(0.95);
+}
+
+/* FRIENDS */
+.friends-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-self: flex-end;
+    gap: 12px;
+
+    background-color: #a0adb5;
+    border-radius: 1vmax;
+    padding: 16px;
+    width: 100%;
+}
+
+.friends-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.friend {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 4px;
+    padding: 12px;
+    background-color: #404b53;
+    border-radius: 0.5vmax;
+}
+
+/* RECENTLY PLAYED */
+.profile-recently-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+    padding: 24px 0;
+    border-radius: 2vmax;
+    background-color: #a0adb5;
+}
+.profile-recently-wrapper h3 {
+    padding-left: 24px;
+}
+
+.recent-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+
+    width: 70vw;
+    padding: 0 24px;
+}
+
+.recent-item {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1;
+    justify-content: flex-start;
+
+    font-family: kdam-thmor-pro;
+    cursor: pointer;
+}
+.recent-item img {
+    height: 15vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 2vmax;
+    box-shadow: 0 0 0.2vmax 0 #000;
+}
+.recent-item h3 {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .recent-container {
+        flex-direction: column;
+    }
+}

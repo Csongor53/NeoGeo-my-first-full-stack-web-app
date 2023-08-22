@@ -1,0 +1,108 @@
+
+<main class="profile-page-main">
+
+    <section class="profile-parent-container">
+
+
+
+        <div class="profile-wrapper">
+            <%user.profilePic = '/public/icons/account_circle.svg'%>
+            <div class="profile-user">
+                <img src="<%= user.profilePic %>" alt="">
+                <h3><%= user.nickname %></h3>
+            </div>
+            <p>Account name: <%= user.account_name %></p>
+
+            <a class="delete-button" href="/users/<%= user.id %>/user-profile/delete">
+                <img src="/public/icons/delete_forever.svg" alt="">
+                <p>Delete</p>
+            </a>
+        </div>
+
+        <div class="profile-banner-container">
+            <div style='background-image: url("/public/uploads/<%= user.id %>_banner.jpg")'></div>
+<!--            <img src="/public/uploads/<%= user.id %>_banner.jpg" alt="profile banner(Edit your account to upload a profile banner!)">-->
+        </div>
+
+        <div class="friends-container">
+            <%
+            let friendsList = [
+                {
+                    img: '/public/icons/account_circle.svg',
+                    nickname: 'Marty',
+                    link: '/'
+                },
+                {
+                    img: '/public/icons/account_circle.svg',
+                    nickname: 'Rob',
+                    link: '/'
+                },
+                {
+                    img: '/public/icons/account_circle.svg',
+                    nickname: 'Fred',
+                    link: '/'
+                },
+                {
+                    img: '/public/icons/account_circle.svg',
+                    nickname: 'Logan',
+                    link: '/'
+                },
+                {
+                    img: '/public/icons/account_circle.svg',
+                    nickname: 'Brian',
+                    link: '/'
+                },
+            ];
+            %>
+            <h3>Friends</h3>
+            <div class="friends-wrapper">
+
+                <%friendsList.map((item) => {%>
+                    <a class="friend" href="<%= item.link %>">
+                        <img src="<%= item.img %>" alt="profile picture">
+                        <h4><%= item.nickname %></h4>
+                    </a>
+                <%})%>
+            </div>
+        </div>
+
+        <div class="profile-recently-wrapper">
+            <%
+            let recentItems = [
+                {
+                    img: '/public/images/games/game1.png',
+                    title: 'Swifty Snake',
+                    link: '/'
+                },
+                {
+                    img: '/public/images/on-sale/gato-roboto.jpg',
+                    title: 'Gato Roboto',
+                    link: '/'
+                },
+                {
+                    img: '/public/images/on-sale/inmost.jpg',
+                    title: 'Inmost',
+                    link: '/'
+                },
+                {
+                    img: '/public/images/on-sale/moving-out.jpg',
+                    title: 'Moving Out',
+                    link: '/'
+                }
+            ];
+            %>
+            <h3>Recently Played Games</h3>
+            <div class="recent-container">
+
+                <%recentItems.map((item) => {%>
+                    <a class="recent-item">
+                        <img src="<%= item.img%>" alt="">
+                        <h3><%= item.title%></h3>
+                    </a>
+                <%})%>
+
+            </div>
+        </div>
+
+    </section>
+</main>

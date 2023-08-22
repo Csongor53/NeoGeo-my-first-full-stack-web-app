@@ -1,0 +1,77 @@
+<nav class="nav-main">
+
+    <!-- CHECKBOX METHOD -->
+    <input type="checkbox" id="checkbox_toggle" />
+    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+    <!-- LEFT -->
+    <div class="nav-content-wrapper nav-left">
+        <ul>
+            <%
+            let marketplacePath = '';
+            if(user){marketplacePath = '/users/'+user.id}
+            else {marketplacePath = '/'}
+            %>
+            <li><a href="<%= marketplacePath %>">Home</a></li>
+<!--            <li><a href="">Library</a></li>-->
+<!--            <li><a href="">Browse</a></li>-->
+            <li><a href="/chat">Chat</a></li>
+            <li><a href="/create-blog">Create Post</a></li>
+            <li><a href="/blogs">Blogs</a></li>
+        </ul>
+    </div>
+
+    <!-- CENTER -->
+    <div class="nav-content-wrapper nav-center">
+        <h1><%= locals.siteName %></h1>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="nav-content-wrapper nav-right">
+
+
+        <%if( user ){%>
+            <div class="dropdown">
+                <a class="nav-profile-container dropbtn">
+                    <img src="/public/icons/account_circle.svg">
+                    <h2><%= user.nickname %></h2>
+                </a>
+
+                <ul class="dropdown-content">
+                    <li><a href="/users/<%= user.id %>/user-profile">
+                            <img src="/public/icons/account_circle.svg" alt="">
+                            <p>Profile</p>
+                        </a></li>
+                    <li><a href="/users/<%= user.id %>/user-profile/edit">
+                            <img src="/public/icons/edit.svg" alt="">
+                            <p>Edit</p>
+                        </a></li>
+                    <li><a href="/users/<%= user.id %>/user-profile/banner">
+                            <img src="/public/icons/panorama.svg" alt="">
+                            <p>Change Banner</p>
+                        </a></li>
+                    <li><a href="/logout">
+                            <img src="/public/icons/logout.svg" alt="">
+                            <p>Logout</p>
+                        </a></li>
+                </ul>
+        </div>
+
+        <%}else{%>
+            <a id="nav-login-register" href="/login-register">
+                <img src="/public/icons/login.svg">
+                <p>LogIn/Register</p>
+            </a>
+        <%}%>
+    </div>
+</nav>
+<nav class="sub-nav">
+    <ul>
+        <li><div class="sub-nav-search">
+                <img src="/public/icons/search.svg" alt="">
+                <input type="text" placeholder="Search">
+            </div></li>
+        <li><a href="">Feed</a></li>
+        <li><a href="">News</a></li>
+    </ul>
+</nav>

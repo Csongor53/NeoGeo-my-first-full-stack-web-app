@@ -1,0 +1,26 @@
+<main>
+    <section class="edit-forms">
+        <div class="edit-form-wrapper">
+            <div class="edit-title">
+                <h3>Change banner</h3>
+                <span class="edit-underline"></span>
+            </div>
+
+            <form class="edit-form" action="/users/<%= user.id %>/user-profile/banner" method="post" enctype="multipart/form-data">
+                <fieldset>
+
+                    <div class="edit-input-wrapper">
+                        <label for="banner">Banner picture</label>
+                        <input name="banner" type="file" required>
+                    </div>
+                    <div style="visibility: hidden">
+                        <label for="id"></label>
+                        <input value="<%= user.id %>" name="id" type="text" required>
+                    </div>
+
+                </fieldset>
+                <button type="submit" class="edit-btn" value="Banner">Update</button>
+            </form>
+        </div>
+    </section>
+</main>
